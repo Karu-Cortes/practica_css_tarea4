@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2? family= Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700 & display=swap");
+
+/*elementos de toda la página*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*ajustar contenido*/
+}
+
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: hidden; /*ajustar pantalla*/
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(37, 29, 45);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 29, 45, 1) 5%,
+    rgba(87, 74, 113, 1) 40%,
+    rgba(91, 73, 124, 1) 59%,
+    rgba(87, 35, 100, 0.865983893557423) 90%
+  );
+  color: #cd91d9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /*espacio entre elementos*/
+  padding: 2em;
+}
+
+.brand {
+  margin-top: -7px;
+  font-size: 30px;
+  display: flex;
+}
+
+.brand img {
+  width: 50px;
+  object-fit: contain;
+}
+.brand span {
+  color: #af2d81;
+}
+
+.menu {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none; /*quitar los puntos*/
+}
+
+.menu a {
+  color: #cd91d9;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.menu li:hover a {
+  background-color: #ffd8ff;
+  opacity: 0.2;
+  color: #572364;
+  font-weight: bold;
+}
+
+.menu .active {
+  color: #ffd8ff;
+  font-weight: bold;
+}
+
+.main {
+  margin: 0 auto; /*el auto se coloca por que algunos navegadores no reconocen margin 0*/
+  width: 80vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2em; /*2em 32px*/
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.info-content span {
+  color: #af2d81;
+}
+
+.download-cv {
+  padding: 10px 20px;
+  background-color: #af2d81;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  color: #572364;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 1px 3px 11px 0.5px #d296de; /*que sea compatible las sombras del botón en todos los navegadores */
+  -moz-box-shadow: 1px 3px 11px 0.5px #d296de; /*que la sombra se visualice en mozilla- esto se puede hacer con normalice*/
+}
+.download-cv:hover {
+  background-color: #572364;
+  box-shadow: none;
+  color: #ffd8ff;
+  box-shadow: 1px 3px 11px 0.5px #7e478b; /*que sea compatible las sombras del botón en todos los navegadores */
+  -moz-box-shadow: 1px 3px 11px 0.5px #7e478b; /*que la sombra se visualice en mozilla- esto se puede hacer con normalice*/
+}
+
+.main img {
+  border: 7px solid #cd91d9;
+  width: 350px;
+  min-height: 320px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: 100vw;
+  align-items: center;
+  background-color: #ffd8ff;
+}
+
+.about img {
+  width: 100%;
+  grid-column: 1/5; /*40% del 100% columna 4/10*/
+  filter: opacity(0.6);
+}
+
+.about-info {
+  grid-column: 5/10;
+  padding: 3em;
+}
+
+.about-info h2 {
+  font-size: 2em;
+  color: #191c32;
+}
+
+.divider {
+  height: 4px;
+  width: 90px;
+  background-color: #af2d81;
+  margin-top: 5px;
+  margin-bottom: 2em;
+  border-radius: 50%;
+}
+
+.about p {
+  margin-bottom: 1em; /*espaciado al final de cada p*/
+  color: #191c32;
+}
+
+/*dos clases con una misma asignación*/
+.portfolio,
+.contact-section {
+  width: 100vw;
+  background: rgb(37, 29, 45);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 29, 45, 1) 5%,
+    rgba(87, 74, 113, 1) 40%,
+    rgba(91, 73, 124, 1) 59%,
+    rgba(87, 35, 100, 0.865983893557423) 90%
+  );
+  color: #ffd8ff;
+}
+
+.portfolio-heading {
+  width: 100vw;
+  padding: 3em 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio-heading h2,
+.contact-heading h2 {
+  font-size: 2.5em;
+  color: #ffd8ff;
+}
+
+.portfolio .container {
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /*centra la caja horizontal*/
+  justify-content: center; /*centra los elementos de cada caja*/
+}
+
+.card {
+  width: 300px;
+  background-color: #7e478b;
+  margin: 1em;
+  border-radius: 30px;
+}
+
+.card__img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  opacity: 0.4;
+  border-start-end-radius: 30px;
+  border-top-left-radius: 30px;
+  background-image: url("https://dynamicxperts.com/wp-saadali/uploads/2022/05/Web-Designers-Web-Design-1.jpg");
+  background-size: cover; /*adaptación de acuerdo a las propiedades de w y h*/
+}
+
+.card:hover .card__img {
+  opacity: 0.9;
+}
+
+.card__title {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__proyect-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card__proyect-links a {
+  color: #ffd8ff;
+  text-decoration: none;
+}
+
+.card__proyect-links i {
+  font-size: 1.5em;
+}
+
+.button-content {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.project-details-button a {
+  text-decoration: none;
+  color: #572364;
+}
+
+.project-details-button:hover a {
+  text-decoration: none;
+  color: #ffd8ff;
+}
+
+.contact-section {
+  width: 100%;
+  border-top-style: dashed;
+  border-top-color: #572364;
+}
+
+.contact-heading {
+  padding: 3em 4em;
+}
+
+.container-contact {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
+}
+
+.contact-section img {
+  object-fit: contain;
+  opacity: 0.3;
+  bottom: 0px;
+  width: 100%;
+  object-fit: contain;
+  grid-column: 1/5;
+}
+
+.contact-form {
+  padding: 5em;
+  width: 100%;
+  grid-column: 5/10;
+  gap: 2em;
+}
+
+.contact-form h4 {
+  font-size: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-top: 2em;
+}
+.form-group textarea {
+  height: 150px;
+  padding: 1.5em;
+  background: none;
+  border: 1px solid #ffd8ff;
+  color: #ffd8ff;
+}
+
+.form-group .input {
+  padding: 10px 20px;
+  margin-bottom: 1em;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ffd8ff;
+  color: #ffd8ff;
+}
+
+.form-group .btn-submit {
+  padding: 10px 20px;
+  background-color: #af2d81;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  color: #572364;
+  font-weight: bold;
+  font-size: 15px;
+  box-shadow: 1px 3px 11px 0.5px #d296de; /*que sea compatible las sombras del botón en todos los navegadores */
+  -moz-box-shadow: 1px 3px 11px 0.5px #d296de; /*que la sombra se visualice en mozilla- esto se puede hacer con normalice*/
+}
+.btn-submit{
+  display: flex;
+  max-width: 170px;
+}
+
+.btn-submit:hover {
+  background-color: #572364;
+  box-shadow: none;
+  color: #ffd8ff;
+  box-shadow: 1px 3px 11px 0.5px #7e478b; /*que sea compatible las sombras del botón en todos los navegadores */
+  -moz-box-shadow: 1px 3px 11px 0.5px #7e478b; /*que la sombra se visualice en mozilla- esto se puede hacer con normalice*/
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 200px;
+  padding: 2em;
+  background-color: #ffd8ff;
+  color: #572364;
+}
+
+.footer-content h2 {
+  font-size: 3em;
+}
+
+.footer-content h5 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.sotial-networks {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+  margin-top: 1em;
+}
+
+.sotial-networks i {
+  font-size: 1.5em;
+}
